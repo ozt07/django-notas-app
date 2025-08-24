@@ -1,0 +1,26 @@
+{% extends 'notas_app/base.html' %}
+
+{% block content %}
+<h2>Mis Notas</h2>
+<a href="{% url 'nueva_nota' %}" class="btn btn-primary mb-3">Nueva Nota</a>
+
+{% if notas %}
+    <div class="list-group">
+        {% for nota in notas %}
+        <div class="list-group-item">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ nota.titulo }}</h5>
+                <small>{{ nota.fecha_creacion|date:"d M Y" }}</small>
+            </div>
+            <p class="mb-1">{{ nota.contenido }}</p>
+            <form method="post" action="{% url 'eliminar_nota' nota.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No hay notas aún. <a href="{% url 'nueva_nota' %}">Crea una nueva nota</a>.</p>
+{% endif %}
+{% endblock %}
