@@ -1,12 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views
 
-# 🌐 URLs GLOBALES del proyecto
 urlpatterns = [
-    # 👨‍💼 Panel de administración de Django
     path('admin/', admin.site.urls),
-    
-    # 🔗 Incluye todas las URLs de tu aplicación de notas
     path('', include('notas_app.urls')),
+    path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]
-

@@ -1,6 +1,9 @@
 from django.contrib import admin
-from .models import Nota
+from .models import Calculo
 
-# 🎯 Registra el modelo Nota en el panel de administración
-# Esto permite crear, editar y eliminar notas desde /admin
-admin.site.register(Nota)
+@admin.register(Calculo)
+class CalculoAdmin(admin.ModelAdmin):
+    list_display = ('usuario', 'expresion', 'resultado', 'fecha_creacion')
+    list_filter = ('usuario', 'fecha_creacion')
+    search_fields = ('expresion',)
+    readonly_fields = ('fecha_creacion',)
