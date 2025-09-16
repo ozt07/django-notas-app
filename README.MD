@@ -1,81 +1,154 @@
-# 📝 Aplicación de Notas con Django
+# Django Notas App 📝
+Una aplicación web desarrollada con Django para gestionar notas personales con funcionalidad de calculadora integrada.
 
-Una aplicación web simple para gestionar notas, creada con Django.
+## Características ✨
+- ✅ Crear, editar y eliminar notas
+- ✅ Interfaz intuitiva y responsive
+- ✅ Funcionalidad de calculadora integrada
+- ✅ Base de datos SQLite
+- ✅ Panel de administración Django
+- ✅ Templates HTML organizados
+- ✅ Formularios Django para entrada de datos
+- ✅ Sistema de routing URL configurado
 
-## 🚀 Características
+## Estructura del Proyecto 📁
+```
+django-notas-app/
+├── notas_app/                 # App principal
+│   ├── migrations/           # Migraciones de la base de datos
+│   ├── templates/notas_app/  # Templates HTML
+│   │   ├── base.html
+│   │   ├── lista_notas.html
+│   │   └── calculadora.html
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── notas_project/            # Configuración del proyecto
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+├── venv/                     # Entorno virtual
+├── db.sqlite3               # Base de datos
+├── manage.py
+├── requirements.txt
+└── .gitignore
+```
 
-- Crear, ver y eliminar notas
-- Interfaz responsive con Bootstrap
-- Panel de administración Django
+## Tecnologías Utilizadas 🛠️
+- **Backend:** Django 4.2+
+- **Frontend:** HTML, CSS, Bootstrap
+- **Base de datos:** SQLite3
+- **Python:** 3.12+
+- **Virtual Environment:** venv
+- **Template Engine:** Django Templates
 
-## 🛠️ Tecnologías
+## Instalación y Configuración ⚡
 
-- Python 3.12+
-- Django 4.2+
-- Bootstrap 5
-- SQLite
+### Prerrequisitos
+- Python 3.8 o superior
+- pip (gestor de paquetes de Python)
+- Git
 
-## ⚡ Instalación
+### Pasos de instalación
 
-1. Clonar el repositorio:
+**Clonar el repositorio**
 ```bash
-git clone https://github.com/tu-usuario/django-notas-app.git
-Crear entorno virtual:
+git clone https://github.com/ozt07/django-notas-app.git
+cd django-notas-app
+```
 
-bash
+**Crear entorno virtual**
+```bash
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# o
-.\venv\Scripts\activate  # Windows
-Instalar dependencias:
+```
 
-bash
-pip install -r requirements.txt
-Ejecutar migraciones:
-
-bash
-python manage.py migrate
-Ejecutar servidor:
-
-bash
-python manage.py runserver
-Abrir en navegador: http://127.0.0.1:8000
-
-text
-
-## 🔄 **ACTUALIZAR CON EL README**
-
+**Activar entorno virtual**
 ```bash
-git add README.md
-git commit -m "Add README.md"
-git push
-🌐 VISUALIZAR EN GITHUB
-Ve a tu repositorio en GitHub
+# Linux/Mac
+source venv/bin/activate
 
-Deberías ver todos los archivos
+# Windows
+venv\Scripts\activate
+```
 
-El README.md se mostrará automáticamente
+**Instalar dependencias**
+```bash
+pip install -r requirements.txt
+```
 
-⚠️ NOTAS IMPORTANTES
-NUNCA subas la base de datos (db.sqlite3)
+**Aplicar migraciones**
+```bash
+python manage.py migrate
+```
 
-NUNCA subas el entorno virtual (venv/)
+**Crear superusuario**
+```bash
+python manage.py createsuperuser
+```
 
-El archivo requirements.txt es esencial para que otros puedan instalar las dependencias
+**Ejecutar servidor de desarrollo**
+```bash
+python manage.py runserver
+```
 
-El .gitignore es tu mejor amigo para evitar subir archivos innecesarios
+**Acceder a la aplicación**
+```
+http://localhost:8000/
+```
 
-🎯 PASOS FINALES
-bash
-# Verificar estado de Git
-git status
+## Uso 🚀
+### Para usuarios normales
+- 📝 Ver todas las notas: Navega a la página principal
+- ➕ Crear nueva nota: Usa el formulario de creación
+- ✏️ Editar nota existente: Haz clic en una nota para modificarla
+- 🗑️ Eliminar nota: Usa la opción de eliminar
+- 🧮 Calculadora: Accede a la pestaña de calculadora para operaciones matemáticas
 
-# Verificar qué se va a subir
-git add -n .  # Muestra qué archivos se agregarán
+### Para administradores
+- 🔧 Panel admin: Accede a http://localhost:8000/admin
+- 👥 Gestionar usuarios: Crear y administrar usuarios
+- 📊 Gestionar datos: Administrar todas las notas en la base de datos
 
-# Si todo está bien, hacer commit final
-git add .
-git commit -m "Project ready for deployment"
+## Archivos Importantes 📄
+- **models.py** - Define la estructura de la base de datos
+- **views.py** - Lógica de la aplicación y controladores
+- **urls.py** - Configuración de las rutas URL
+- **forms.py** - Formularios para entrada de datos
+- **settings.py** - Configuración del proyecto Django
 
-# Subir a GitHub
-git push
+## Comandos Útiles 🖥️
+```bash
+# Crear nuevas migraciones
+python manage.py makemigrations
+
+# Aplicar migraciones
+python manage.py migrate
+
+# Ejecutar tests
+python manage.py test
+
+# Acceder a shell de Django
+python manage.py shell
+```
+
+## Licencia 📄
+Este proyecto está bajo la Licencia MIT. Ver el archivo LICENSE para más detalles.
+
+## Autor 👨💻
+Desarrollado por Tu Nombre
+
+## Contribuciones 🤝
+¡Las contribuciones son bienvenidas! Si deseas mejorar este proyecto:
+
+1. Haz fork del proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
