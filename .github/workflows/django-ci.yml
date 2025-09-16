@@ -39,4 +39,4 @@ jobs:
 
     - name: Run tests
       run: |
-        python manage.py test notas_app.tests.test_basic
+        python manage.py test notas_app/tests/test_basic.py
