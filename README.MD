@@ -1,3 +1,5 @@
+[![Django CI](https://github.com/ozt07/django-notas-app/actions/workflows/django-ci.yml/badge.svg)](https://github.com/ozt07/django-notas-app/actions/workflows/django-ci.yml)
+
 # Django Notas App 📝
 Una aplicación web desarrollada con Django para gestionar notas personales con funcionalidad de calculadora integrada.
 
@@ -152,3 +154,44 @@ Desarrollado por Tu Nombre
 3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
+
+## Automatización con GitHub Actions ⚙️
+
+Este proyecto utiliza GitHub Actions para ejecutar tests automáticos en cada push. El workflow implementado incluye:
+
+### ✅ Funcionalidades del workflow:
+- **Ejecución automática** en cada push a la rama main
+- **Testing con PostgreSQL** como base de datos de testing
+- **Validación de dependencias** con pip
+- **Ejecución de migraciones** automáticas
+- **Suite de tests** de Django
+
+### 📊 Estado del CI:
+![Django CI](https://github.com/ozt07/django-notas-app/actions/workflows/django-ci.yml/badge.svg)
+
+### 🚀 Workflow configuration:
+El workflow se encuentra en `.github/workflows/django-ci.yml` y realiza los siguientes pasos:
+1. Configura entorno Ubuntu con Python 3.12
+2. Instala dependencias del proyecto
+3. Configura PostgreSQL para testing
+4. Ejecuta migraciones de la base de datos
+5. Ejecuta la suite de tests de Django
+
+### 📋 Comandos ejecutados:
+```bash
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py test
+
+
+## 4. **Comandos para subir los cambios:**
+
+```bash
+# Agregar los cambios al README
+git add README.md
+
+# Hacer commit
+git commit -m "docs: add GitHub Actions badge and documentation"
+
+# Subir a GitHub
+git push origin main
