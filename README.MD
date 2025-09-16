@@ -195,3 +195,16 @@ git commit -m "docs: add GitHub Actions badge and documentation"
 
 # Subir a GitHub
 git push origin main
+
+
+![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)
+
+## Containerización con Docker 🐳
+
+### Requisitos previos
+- Docker Desktop instalado (Windows/Mac) o Docker Engine (Linux)
+- Proyecto funcionando correctamente
+
+### Construcción de la imagen
+```bash
+docker build -t django-notas-app .
