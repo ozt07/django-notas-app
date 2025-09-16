@@ -4,7 +4,7 @@ from django.urls import reverse
 class BasicTests(TestCase):
     def test_basic_math(self):
         """Test básico de matemáticas"""
-        self.assertEqual(1 + 1, 2)
+        self.assertEqual(1 + 1, 3)
     
     def test_home_page_status(self):
         """Test que verifica que la página principal carga correctamente"""
